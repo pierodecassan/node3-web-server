@@ -13,7 +13,7 @@ weatherForm.addEventListener('submit',(e) =>{
     const location= search.value
     message1.textContent='Loading...'
     message2.textContent=''
-    fetch('http://localhost:3000/weather?search=padova&address='+location).then((response) => {
+    fetch('/weather?search=padova&address='+location).then((response) => {
     response.json().then((data) => {
     console.log(data)
     if(data.error){
