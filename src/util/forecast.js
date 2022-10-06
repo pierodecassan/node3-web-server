@@ -15,7 +15,11 @@ request({url,json:true}, (error, {body})=>{
         }
         else{
         const temperature = body.current.temperature
-        callback(undefined,'The temperature in '+body.location.name+' is '+temperature)
+        const humidity = body.current.humidity
+        const weather_icons = body.current.weather_icons
+        weather_description = body.current.weather_descriptions
+        console.log(weather_description)
+        callback(undefined,'The temperature in '+body.location.name+' is '+temperature+' and humidity is '+humidity+'%')
         } 
     
     })
